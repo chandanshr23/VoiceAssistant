@@ -1,0 +1,28 @@
+# VAD + ASR Pipeline — Requirements
+# Install: pip install -r requirements.txt
+#
+# Windows note: use 'webrtcvad-wheels' not 'webrtcvad'
+# GPU note: install PyTorch separately before this file (see README)
+
+# ── Core audio ────────────────────────────────────────────────────────────
+webrtcvad-wheels==2.0.10.post2    # WebRTC VAD (Windows/Mac/Linux wheels included)
+soundfile==0.12.1               # Audio file I/O
+numpy>=1.24.0                   # Array ops, signal processing
+
+# ── ASR ───────────────────────────────────────────────────────────────────
+faster-whisper==1.0.3           # CTranslate2-backed Whisper (INT8, word timestamps)
+
+# ── DNN VAD (fallback for noisy audio) ───────────────────────────────────
+# torch is listed separately — install the right CUDA build first:
+# RTX 5000 series (Blackwell): pip install --pre torch torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+# RTX 3000/4000 series:        pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+# CPU only:                    pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+# silero-vad downloads the model via torch.hub on first use (~1.8MB)
+silero-vad==5.1.2
+
+# ── Benchmarking ──────────────────────────────────────────────────────────
+# No extra deps — uses numpy + stdlib time/wave/threading
+#To Record your Voice
+# Install sounddevice for mic recording
+sounddevice
+kokoro-onnx

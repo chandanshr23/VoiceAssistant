@@ -1,0 +1,66 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.python-version
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Local environment files
+.env
+*.env
+
+# Model and binary files
+voices.bin
+kokoro-v1.0.onnx
+*.onnx
+*.bin
+*.ckpt
+*.pth
+*.safetensors
+*.pt
+
+# Audio data
+*.wav
+*.mp3
+*.flac
+*.m4a
+
+# Local caches and temporary files
+.cache/
+local/
+
+# Jupyter
+.ipynb_checkpoints/
